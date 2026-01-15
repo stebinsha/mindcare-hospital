@@ -7,8 +7,16 @@ import {
 import { experts as initialExperts } from "../../data/expertsData";
 
 const users = [
-  { username: "admin", password: "admin123", role: "admin" },
-  { username: "viewer", password: "viewer123", role: "viewer" }
+  {
+    username: import.meta.env.VITE_ADMIN_USERNAME ?? "admin",
+    password: import.meta.env.VITE_ADMIN_PASSWORD ?? "admin123",
+    role: "admin",
+  },
+  {
+    username: import.meta.env.VITE_VIEWER_USERNAME ?? "viewer",
+    password: import.meta.env.VITE_VIEWER_PASSWORD ?? "viewer123",
+    role: "viewer",
+  },
 ];
 
 export default function AdminPanel() {
