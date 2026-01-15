@@ -26,10 +26,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+  
       <section className="px-10 pb-20 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        {/* Find Experts */}
+     
         <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition cursor-pointer">
           <Users className="text-[#5faea0] w-10 h-10 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Find Experts</h3>
@@ -45,7 +45,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Book Appointment */}
+        
         <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition cursor-pointer">
           <Calendar className="text-[#4fa3b6] w-10 h-10 mb-4" />
           <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -63,7 +63,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Admin Panel */}
+       
         <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition cursor-pointer">
           <ShieldCheck className="text-[#3f8f9f] w-10 h-10 mb-4" />
           <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -82,11 +82,7 @@ export default function Home() {
         </div>
 
       </section>
-
-      {/* Footer */}
-      <footer className="text-center py-6 text-sm text-gray-500 bg-white">
-        © 2026 MindCare Hospital. All rights reserved.
-      </footer>
+    
     </div>
   );
 }
