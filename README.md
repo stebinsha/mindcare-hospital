@@ -20,7 +20,7 @@ MindCare Hospital is a modern mental health care web application designed to hel
 
 ## Live Demo
 Check out the live demo of the project here:  
-[MindCare Hospital Live Demo](https://mindcare-hospital-032920023.netlify.app)
+[MindCare Hospital Live Demo](https://mindcare-hospital.vercel.app)
 
 
 ## Clear Setup and Run Instructions
