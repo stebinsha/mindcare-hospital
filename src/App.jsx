@@ -15,11 +15,11 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+           <div className="pt-15">
               <Navbar />
               <Home />
             <Footer/>
-            </>
+            </div>
           }
         />
 
@@ -27,11 +27,11 @@ function App() {
         <Route
           path="/experts"
           element={
-            <>
+        <div className="pt-15">
               <Navbar />
               <Experts />
               <Footer/>
-            </>
+          </div>
           }
         />
 
@@ -39,11 +39,11 @@ function App() {
         <Route
           path="/experts/:id"
           element={
-            <>
+              <div className="pt-15">
               <Navbar />
               <ExpertProfile />
               <Footer/>
-            </>
+            </div>
           }
         />
 
@@ -51,11 +51,11 @@ function App() {
         <Route
           path="/booking/:id"
           element={
-            <>
+            <div className="pt-15">
               <Navbar />
               <BookingFlow />
               <Footer/>
-            </>
+            </div>
           }
         />
  
