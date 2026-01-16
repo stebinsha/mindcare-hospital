@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, Stethoscope } from "lucide-react";
+import { Search, Stethoscope,ChevronDown } from "lucide-react";
 
 export default function Experts() {
   const [experts, setExperts] = useState([]);
@@ -61,7 +61,8 @@ export default function Experts() {
               className="w-full pl-12 pr-10 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 cursor-pointer flex justify-between items-center focus:ring-2 focus:ring-[#8dc4b6] transition"
             >
               {specialty || "All Specialties"}
-              <span className="text-gray-400">▼</span>
+             <ChevronDown size={16}  className="text-gray-400 group-hover:text-[#3a7f73] transition" />
+      
             </div>
 
             {dropdownOpen && (
