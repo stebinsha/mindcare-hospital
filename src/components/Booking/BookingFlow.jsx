@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Calendar, Clock, Video, MapPin, CheckCircle, X } from "lucide-react";
+import {Clock, Video, MapPin, CheckCircle, X } from "lucide-react";
 
 export default function BookingFlow() {
   const location = useLocation();
@@ -40,19 +40,76 @@ export default function BookingFlow() {
     setError("");
     if (step === 1 && !consultation) return setError("Please select a consultation type.");
     if (step === 2 && (!date || !timeSlot)) return setError("Please select date and time.");
-    if (step === 3 && (!patient.name || !patient.email || !/^\S+@\S+\.\S+$/.test(patient.email))) return setError("Please enter a valid name and email.");
+   if (step === 3) {
+  const name = patient.name?.trim();
+  const email = patient.email?.trim();
+
+  if (!name || !email) {
+    setError("Name and email are required");
+    return;
+  }
+
+ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setError("Please enter a valid email address");
+    return;
+  }
+}
+
     setStep(step + 1);
   };
 
   const handleBack = () => { setError(""); if (step>1) setStep(step-1); };
+const handleSubmit = () => {
+  setError("");
 
-  const handleSubmit = () => {
-    setError("");
-    if (!date || !timeSlot || !patient.name || !patient.email) {
-      return setError("Please complete all fields before confirming.");
-    }
-    setShowModal(true);
-  };
+  const name = patient.name.trim();
+  const email = patient.email.trim();
+
+  if (!name || !email) {
+    return setError("Name and email are required.");
+  }
+ 
+if (email.length < 6) {
+  return setError("Email must be at least 6 characters long.");
+}
+ 
+if (!email.includes("@")) {
+  return setError("Email must contain '@' symbol.");
+}
+
+if (email.split("@").length !== 2) {
+  return setError("Email must contain only one '@' symbol.");
+}
+ 
+const [username, domain] = email.split("@");
+if (username.length < 2) {
+  return setError("Email name must have at least 2 characters before '@'.");
+}
+ 
+if (!domain || domain.length === 0) {
+  return setError("Email domain is required (example: gmail.com).");
+}
+
+if (!domain.includes(".")) {
+  return setError("Email domain must contain a '.' (example: gmail.com).");
+}
+ 
+const extension = domain.split(".").pop();
+if (extension.length < 2) {
+  return setError("Email domain extension must be at least 2 characters.");
+}
+ 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+  return setError("Please enter a valid email address.");
+}
+if (!date || !timeSlot) {
+  return setError("Please complete all fields before confirming.");
+}
+
+setShowModal(true);
+};
+
 
   const confirmBooking = () => {
     setLoading(true);
