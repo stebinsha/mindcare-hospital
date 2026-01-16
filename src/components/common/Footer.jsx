@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
         
-          <div className="space-y-3">
+          <div  id="about" className="space-y-3">
             <h2 className="text-lg font-semibold text-gray-800">About MindCare</h2>
             <p className="text-gray-600 text-sm leading-relaxed">
               MindCare Hospital provides compassionate mental health services with experienced psychiatrists, psychologists, 
@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
 
           
-          <div className="space-y-3">
+          <div id="contact"  className="space-y-3">
             <h2 className="text-lg font-semibold text-gray-800">Contact Us</h2>
             <div className="flex items-start gap-2">
               <MapPin className="w-5 h-5 text-[#5faea0] mt-0.5 flex-shrink-0" />

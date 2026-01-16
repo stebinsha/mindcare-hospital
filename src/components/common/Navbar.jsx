@@ -2,7 +2,15 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
-
+const scrollToFooter = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-sm px-8 py-4 flex items-center justify-between z-50">
       
@@ -37,21 +45,20 @@ export default function Navbar() {
         </li>
 
         <li>
-          <NavLink to="/services" className="hover:text-[#3a7f73]">
+          <NavLink to="/experts" className="hover:text-[#3a7f73]">
             Services
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/about" className="hover:text-[#3a7f73]">
-            About
-          </NavLink>
+           <li>
+          <button onClick={() => scrollToFooter("about")} className="hover:text-[#3a7f73]">About</button>
+        </li>
+
         </li>
 
         <li>
-          <NavLink to="/contact" className="hover:text-[#3a7f73]">
-            Contact
-          </NavLink>
+           <button onClick={() => scrollToFooter("contact")} className="hover:text-[#3a7f73]">Contact</button>
         </li>
       </ul>
 
