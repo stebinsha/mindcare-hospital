@@ -24,23 +24,25 @@ Check out the live demo of the project here:
 
 
 ## Clear Setup and Run Instructions
-**1.Clone the repository**
+- **1.Clone the repository**
 git clone https://github.com/stebinsha/mindcare-hospital.git
 cd mindcare-hospital
-**2.Install dependencies**
+
+- **2.Install dependencies**
 npm install
 npm install lucide-react
 npm install react-router-dom
-**3.Run the development server**
+
+- **3.Run the development server**
 npm run dev
 
 
 ## Assumptions Made
-1.The project uses only frontend; no backend or API integration.
-2.Admin can add, edit, or delete doctors; Viewer can only view.
-3.All data is stored in localStorage.
-4.Default admin and viewer credentials are stored in .env for local development.
-5.Images can be URLs; placeholders are used if empty.
+- The project uses only frontend; no backend or API integration.
+- Admin can add, edit, or delete doctors; Viewer can only view.
+- All data is stored in localStorage.
+- Default admin and viewer credentials are stored in .env for local development.
+- Images can be URLs; placeholders are used if empty.
 
 ## AI Tools Used
 - **ChatGPT**

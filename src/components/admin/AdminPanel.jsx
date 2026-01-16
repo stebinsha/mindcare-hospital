@@ -4,7 +4,7 @@ import {
   Shield, LogOut, Users, CalendarCheck, UserCircle,
   ArrowUpDown, Search, Plus, Edit, Trash2
 } from "lucide-react";
-import { experts as initialExperts } from "../../data/expertsData";
+import { expertsData as initialExperts } from "../../data/expertsData";
 
 const users = [
   {

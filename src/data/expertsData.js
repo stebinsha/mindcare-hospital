@@ -1,4 +1,4 @@
-export const experts = [
+export const expertsData = [
   {
     id: 1,
     name: "Dr. Ananya Rao",

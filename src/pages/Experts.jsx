@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, Stethoscope,ChevronDown } from "lucide-react";
+import { expertsData } from "../data/expertsData";
 
 export default function Experts() {
-  const [experts, setExperts] = useState([]);
+  const [experts] = useState(expertsData);
   const [search, setSearch] = useState("");
   const [specialty, setSpecialty] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -12,11 +13,6 @@ export default function Experts() {
 
   const options = ["Psychologist", "Psychiatrist", "Therapist"];
  
-  useEffect(() => {
-    const storedDoctors = JSON.parse(localStorage.getItem("doctors"));
-    setExperts(storedDoctors || []);
-  }, []);
-
   const filteredExperts = experts.filter(
     (exp) =>
       exp.name.toLowerCase().includes(search.toLowerCase()) &&
